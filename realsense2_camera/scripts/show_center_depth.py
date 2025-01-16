@@ -40,7 +40,7 @@ class ImageListener:
             sys.stdout.flush()
 
         except CvBridgeError as e:
-            print(e)
+            # print(e)
             return
         except ValueError as e:
             return
@@ -52,7 +52,7 @@ class ImageListener:
             if (self.pix):
                 self.pix_grade = grades[self.pix[1], self.pix[0]]
         except CvBridgeError as e:
-            print(e)
+            # print(e)
             return
 
 
@@ -74,7 +74,7 @@ class ImageListener:
                 self.intrinsics.model = rs2.distortion.kannala_brandt4
             self.intrinsics.coeffs = [i for i in cameraInfo.D]
         except CvBridgeError as e:
-            print(e)
+            # print(e)
             return
 
 def main():

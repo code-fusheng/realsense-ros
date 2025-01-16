@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(realsense2_description)
 
-if (realsense2_FOUND)
+if (false)
   find_package(catkin REQUIRED COMPONENTS
       )
 

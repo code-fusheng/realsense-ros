@@ -79,7 +79,7 @@ class CWaitForMessage:
                 rotated.resize(1,4)
                 rotated = np.array(rotated)[0][:3]
             except Exception as e:
-                print(e)
+                # print(e)
                 return
             self.func_data[theme_name]['value'].append(value)
             self.func_data[theme_name]['ros_value'].append(rotated)
@@ -97,7 +97,7 @@ class CWaitForMessage:
             try:
                 cv_image = self.bridge.imgmsg_to_cv2(data, data.encoding)
             except CvBridgeError as e:
-                print(e)
+                # print(e)
                 return
             channels = cv_image.shape[2] if len(cv_image.shape) > 2 else 1
             pyimg = np.asarray(cv_image)
@@ -134,7 +134,7 @@ class CWaitForMessage:
             try:
                 points = np.array([pc2_to_xyzrgb(pp) for pp in pc2.read_points(data, skip_nans=True, field_names=("x", "y", "z", "rgb")) if pp[0] > 0])
             except Exception as e:
-                print(e)
+                # print(e)
                 return
             self.func_data[theme_name]['avg'].append(points.mean(0))
             self.func_data[theme_name]['size'].append(len(points))

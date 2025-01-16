@@ -80,7 +80,7 @@ def ImageGetData(rec_filename, topic):
         try:
             cv_image = bridge.imgmsg_to_cv2(msg, msg.encoding)
         except CvBridgeError as e:
-            print(e)
+            # print(e)
             continue
         pyimg = np.asarray(cv_image)
         ok_number = (pyimg != 0).sum()
